@@ -32,30 +32,13 @@ On Windows, you can instead double-click `start-interface.cmd`.
 
 The interface lets you:
 
-- mark dice that have already been rolled,
-- drag or click camels onto the 16 track spaces,
-- arrange towers in exact top-to-bottom order,
-- cycle empty spaces between no tile, cheering, and booing,
-- calculate exact finishing and movement probabilities.
+- Mark dice that have already been rolled
+- Drag or click camels onto the 16 track spaces
+- Arrange towers in exact top-to-bottom order
+- Cycle empty spaces between no tile, cheering and booing
+- Calculate exact finishing and movement probabilities
 
 The current setup is saved automatically in the browser.
-
-## Share through GitHub
-
-The repository is ready to upload. The official rulebook, generated executable, and development dependencies are excluded by `.gitignore`.
-
-Create an empty GitHub repository, then run these commands in this project directory, replacing the example URL with your repository URL:
-
-```powershell
-git init
-git add .
-git commit -m "Initial Camel Up analyzer"
-git branch -M main
-git remote add origin https://github.com/YOUR-NAME/camel-up-analyzer.git
-git push -u origin main
-```
-
-Your friend can then use **Code → Download ZIP**, extract it, and run `node server.js --open`. GitHub Pages alone cannot run this application because the exact analyzer uses a local Node.js backend.
 
 ## Build the Windows executable
 
