@@ -8,7 +8,7 @@ It models camel towers, both crazy camels, the grey-die exceptions, cheering and
 
 ### Windows executable — no installation
 
-1. Download `CamelUpAnalyzer.exe` from the person sharing it or from a GitHub release.
+1. Download `CamelUpAnalyzer.exe` from this GitHub release.
 2. Double-click the executable.
 3. Your browser opens automatically with the analyzer.
 4. Keep the small terminal window open while using the app.
