@@ -1,0 +1,26 @@
+{
+  "name": "camel-up-leg-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exact outcome analyzer for a Camel Up leg",
+  "bin": "server.js",
+  "scripts": {
+    "analyze": "node camel-up-analyzer.js sample-state.json",
+    "start": "node server.js",
+    "start:open": "node server.js --open",
+    "test": "node camel-up-analyzer.test.js && node web.test.js",
+    "build:exe": "pkg . --targets node22-win-x64 --compress GZip --output dist/CamelUpAnalyzer.exe"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "pkg": {
+    "assets": [
+      "public/**/*",
+      "sample-state.json"
+    ]
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "6.23.0"
+  }
+}

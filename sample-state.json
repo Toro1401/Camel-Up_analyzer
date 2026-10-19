@@ -1,0 +1,15 @@
+{
+  "trackLength": 16,
+  "stacks": [
+    { "space": 2, "camels": ["purple"] },
+    { "space": 3, "camels": ["blue", "yellow"] },
+    { "space": 5, "camels": ["green", "red"] },
+    { "space": 14, "camels": ["black"] },
+    { "space": 16, "camels": ["white"] }
+  ],
+  "traps": [
+    { "space": 7, "side": "cheer", "owner": "Alice" },
+    { "space": 11, "side": "boo", "owner": "Bob" }
+  ],
+  "remainingDice": ["blue", "green", "yellow", "red", "purple", "grey"]
+}

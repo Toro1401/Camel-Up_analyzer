@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.log
+.appdeploy
+.DS_Store
+Thumbs.db
+
+# Keep the publisher's rulebook out of the source repository and releases.
+en_camelup.html_CamelUp_PZE30070_Rules_EN_WEB_240305.pdf

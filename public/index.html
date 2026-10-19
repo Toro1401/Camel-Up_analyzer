@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exact Camel Up leg probability analyzer">
+  <title>Camel Up · Leg Analyzer</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark" aria-hidden="true">CU</div>
+    <div>
+      <p class="eyebrow">Exact probability engine</p>
+      <h1>Camel Up Leg Analyzer</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <p class="section-kicker">Build the current race</p>
+        <h2>Set the board. See every possible finish.</h2>
+        <p>Place the camels, arrange each tower from top to bottom, mark rolled dice and set spectator tiles. The analysis is exhaustive—not a simulation.</p>
+      </div>
+      <div class="legend" aria-label="Track legend">
+        <span><i class="legend-dot legend-finish"></i> Finish between 16 &amp; 1</span>
+        <span><i class="legend-dot legend-cheer"></i> Cheer +1</span>
+        <span><i class="legend-dot legend-boo"></i> Boo −1</span>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Race setup">
+      <aside class="control-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="step-number">01</p>
+            <h2>Dice</h2>
+          </div>
+          <span class="panel-status" id="dice-status"></span>
+        </div>
+        <p class="help-text">Select every die that has already come out of the pyramid.</p>
+        <div class="dice-grid" id="dice-controls"></div>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-heading compact">
+          <div>
+            <p class="step-number">02</p>
+            <h2>Camels</h2>
+          </div>
+        </div>
+        <p class="help-text">Drag a camel onto the track, or select it and then choose a space.</p>
+        <div class="camel-roster" id="camel-roster"></div>
+        <p class="selection-hint" id="selection-hint" aria-live="polite">No camel selected</p>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-heading compact">
+          <div>
+            <p class="step-number">03</p>
+            <h2>Spectator tiles</h2>
+          </div>
+        </div>
+        <p class="help-text">Use the tile button on an empty space to cycle: none → cheer → boo.</p>
+      </aside>
+
+      <section class="board-panel">
+        <div class="board-toolbar">
+          <div>
+            <p class="section-kicker">Clockwise race track</p>
+            <h2>Current positions</h2>
+          </div>
+          <button class="button button-quiet" id="clear-board" type="button">Reset board</button>
+        </div>
+        <div class="track-shell">
+          <div class="track" id="track" aria-label="16-space race track"></div>
+          <div class="track-center" aria-hidden="true">
+            <span class="pyramid">△</span>
+            <strong>PYRAMID</strong>
+            <small>Clockwise ↻</small>
+          </div>
+        </div>
+        <p class="stack-note">Within each space, the top camel is shown first. Use the arrow buttons to change the tower order.</p>
+      </section>
+    </section>
+
+    <section class="run-panel">
+      <div>
+        <p class="section-kicker">Ready when you are</p>
+        <h2>Calculate the rest of this leg</h2>
+        <p id="run-summary">Six dice remain; five will be revealed.</p>
+      </div>
+      <button class="button button-primary" id="analyze" type="button">
+        <span class="button-label">Analyze every outcome</span>
+        <span class="button-loader" aria-hidden="true"></span>
+      </button>
+    </section>
+
+    <div class="message" id="message" role="alert" hidden></div>
+
+    <section class="results" id="results" hidden aria-live="polite">
+      <div class="results-heading">
+        <div>
+          <p class="section-kicker">Exact results</p>
+          <h2>Where the leg can go</h2>
+        </div>
+        <span class="result-time" id="result-time"></span>
+      </div>
+
+      <div class="summary-cards" id="summary-cards"></div>
+
+      <article class="result-card">
+        <div class="card-heading">
+          <div>
+            <p class="step-number">A</p>
+            <h3>Finishing probabilities</h3>
+          </div>
+          <p>Higher saturation means a more likely result.</p>
+        </div>
+        <div class="table-wrap">
+          <table id="rank-table"></table>
+        </div>
+      </article>
+
+      <article class="result-card">
+        <div class="card-heading">
+          <div>
+            <p class="step-number">B</p>
+            <h3>Movement</h3>
+          </div>
+          <p>Net move is signed; distance counts movement in both directions.</p>
+        </div>
+        <div class="table-wrap">
+          <table id="movement-table"></table>
+        </div>
+      </article>
+
+      <article class="result-card" id="tile-results" hidden>
+        <div class="card-heading">
+          <div>
+            <p class="step-number">C</p>
+            <h3>Spectator tiles</h3>
+          </div>
+          <p>Each trigger is worth one Egyptian Pound to its owner.</p>
+        </div>
+        <div class="table-wrap">
+          <table id="tile-table"></table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>Camel Up exact leg analyzer</span>
+    <span>All state stays on this computer.</span>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
